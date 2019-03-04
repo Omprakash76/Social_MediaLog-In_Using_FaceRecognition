@@ -55,7 +55,7 @@ while True:
                 
     process_this_frame = not process_this_frame
     if name == 'Omprakash':
-         import menuOp
+         import menu
 
     # Display the results
     for (top, right, bottom, left), name in zip(face_locations, face_names):
