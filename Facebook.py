@@ -7,6 +7,7 @@ from time import sleep
 
 use = "Write your Email/Mobile number Here"
 pwd = "write Your Password Here"
+message=input('\nEnter your message for status:')
 
 print("\nOpening Facebook...")
 
@@ -31,3 +32,11 @@ fb_login.submit()
 sleep(3)
 print("Loged in Successfully!!!")
 
+status= browser.find_element_by_xpath("//textarea[@name='xhpc_message']")
+status.send_keys(message);
+print("Status trying")
+sleep(2)
+
+postbutton = browser.find_element_by_xpath("//button[contains(.,'Share')]")
+postbutton.click()
+print("post done")
