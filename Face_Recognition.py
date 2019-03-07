@@ -54,9 +54,21 @@ while True:
             face_names.append(name)
                 
     process_this_frame = not process_this_frame
+    #fimporting  menu
+    if name == "Unknown":
+        cv2.putText(frame, "Authentication Failed", (250, 480), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 2)
+        count = 0
+    if name == "":
+        cv2.putText(frame, "User Not Found", (250, 450), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 2)
+    #used for wait some time We can use sleep() method but this is not efficient
     if name == 'Omprakash':
-         import menu
-
+        cv2.putText(frame, "Loging in...", (250, 450), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 2)
+        if count<=30:
+            count = count + 1
+            
+    if name == 'Omprakash' and count == 31:
+        import menu
+        break
     # Display the results
     for (top, right, bottom, left), name in zip(face_locations, face_names):
         # Scale back up face locations since the frame we detected in was scaled to 1/4 size
