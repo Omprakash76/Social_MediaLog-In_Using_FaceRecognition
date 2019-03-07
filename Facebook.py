@@ -41,7 +41,6 @@ else:
   status.send_keys(message);
   print("Status trying")
   sleep(2)
-
   postbutton = browser.find_element_by_xpath("//button[contains(.,'Share')]")
   postbutton.click()
   print("post done")
