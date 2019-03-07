@@ -32,11 +32,16 @@ fb_login.submit()
 sleep(3)
 print("Loged in Successfully!!!")
 
-status= browser.find_element_by_xpath("//textarea[@name='xhpc_message']")
-status.send_keys(message);
-print("Status trying")
-sleep(2)
+text = ""
+i=0
+if message == "":
+    print("Loged in Successfully!!!")
+else:
+  status= browser.find_element_by_xpath("//textarea[@name='xhpc_message']")
+  status.send_keys(message);
+  print("Status trying")
+  sleep(2)
 
-postbutton = browser.find_element_by_xpath("//button[contains(.,'Share')]")
-postbutton.click()
-print("post done")
+  postbutton = browser.find_element_by_xpath("//button[contains(.,'Share')]")
+  postbutton.click()
+  print("post done")
