@@ -43,4 +43,4 @@ else:
   sleep(2)
   postbutton = browser.find_element_by_xpath("//button[contains(.,'Share')]")
   postbutton.click()
-  print("post done")
+  print("post  done")
